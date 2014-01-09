@@ -1,4 +1,4 @@
-ivereadthat
+Awesome
 ===========
 
-朕知道了
+妖受讚
