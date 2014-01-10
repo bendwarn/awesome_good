@@ -14,19 +14,16 @@ var observer = new MutationObserver(function(mutations, observer) {
         }
     });
 
-    jQuery("span > span").each(function() {
-        var tex = $(this).text()
-        if(tex.substr(tex.length - 3, 3) == "說讚。") {
-            $(this).text(tex.substr(0, tex.length - 2) + "妖受讚。")
-        }
-    });
-
-    jQuery("div.tickerFeedMessage.fwn").each(function() {
+    var complex_case = function() {
         var tex = $(this).text()
         if(tex.substr(tex.length - 2, 2) == '讚。') {
-            $(this).text(tex.substr(0, tex.length - 2) + '妖受讚！')
+            $(this).text(tex.substr(0, tex.length - 2) + '妖受讚')
         }
-    });
+    }
+
+    jQuery("span > span").each(complex_case);
+
+    jQuery("div.tickerFeedMessage.fwn").each(complex_case);
 })
 
 observer.observe(document, {
